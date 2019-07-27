@@ -3,7 +3,7 @@
 
 # docker-tex
 
-Docker image for compiling TeX files.
+Docker image for compiling `TeX` files.
 
 ## Build
 
@@ -15,10 +15,10 @@ docker build -t alfaro96/tex:latest .
 
 ## Run
 
-To compile the "main" file:
+To compile the main file:
 
 ```
-docker run -it -v $(pwd)/:/home/tex/workspace/ -e FILE=main --rm alfaro96/plr:latest
+docker run -it -v $(pwd)/:/home/tex/workspace/ -e FILE=main --rm alfaro96/tex:latest
 ```
 
 ## Docker Hub

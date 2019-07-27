@@ -4,7 +4,7 @@ FROM debian:jessie-slim
 RUN apt-get update
 
 # Install "TeX"
-RUN apt-get install -y texlive-full
+RUN apt-get install -y texlive-full chktex
 
 # Define the username
 ARG USERNAME=tex
@@ -19,5 +19,8 @@ WORKDIR /home/$USERNAME/workspace
 # to know the path to the user home
 ENV HOME /home/$USERNAME
 
-# Compile the TeX file
-CMD pdflatex $FILE.tex && bibtex $FILE.aux && pdflatex $FILE.tex && pdflatex $FILE.tex
+# Compile the main file
+CMD pdflatex -synctex=1 -interaction=nonstopmode -file-line-error $FILE \
+    bibtex $FILE \
+    pdflatex -synctex=1 -interaction=nonstopmode -file-line-error $FILE \
+    pdflatex -synctex=1 -interaction=nonstopmode -file-line-error $FILE
