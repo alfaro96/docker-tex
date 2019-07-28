@@ -20,7 +20,4 @@ WORKDIR /home/$USERNAME/workspace
 ENV HOME /home/$USERNAME
 
 # Compile the main file
-CMD pdflatex -synctex=1 -interaction=nonstopmode -file-line-error $FILE \
-    bibtex $FILE \
-    pdflatex -synctex=1 -interaction=nonstopmode -file-line-error $FILE \
-    pdflatex -synctex=1 -interaction=nonstopmode -file-line-error $FILE
+CMD latexmk -synctex=1 -interaction=nonstopmode -file-line-error -pdf $FILE
