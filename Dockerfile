@@ -3,7 +3,8 @@ FROM debian:jessie-slim
 # Update the repositories
 RUN apt-get update
 
-# Install "TeX"
+# Install the full version of TeX
+# and chktex for simple linting
 RUN apt-get install -y texlive-full chktex
 
 # Define the username
@@ -15,7 +16,7 @@ USER $USERNAME
 RUN mkdir -p /home/$USERNAME/workspace
 WORKDIR /home/$USERNAME/workspace
 
-# Set the "HOME" environment variable
+# Set the HOME environment variable
 # to know the path to the user home
 ENV HOME /home/$USERNAME
 
