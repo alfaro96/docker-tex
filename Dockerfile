@@ -1,4 +1,4 @@
-FROM debian:jessie-slim
+FROM debian:buster-slim
 
 # Install the full version of TeX to compile LaTeX
 # projects ChkTeX for LaTeX semantic checker and
