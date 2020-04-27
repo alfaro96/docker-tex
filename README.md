@@ -1,30 +1,42 @@
-![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/alfaro96/tex.svg)
-![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/alfaro96/tex.svg)
+![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/alfaro96/tex)
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/alfaro96/tex)
+![Docker Pulls](https://img.shields.io/docker/pulls/alfaro96/tex)
+![Docker Image Size](https://img.shields.io/docker/image-size/alfaro96/tex/latest)
 
-# docker-tex
+# Using LaTeX via Docker
 
-Docker image for compiling `TeX` files.
+This directory contains a Dockerfile to make it easy to get up and running with LaTeX via [Docker](https://docker.com).
 
-## Build
+## Installing Docker
 
-To build the image:
+General installation instructions are [on the Docker site](https://docs.docker.com/get-docker/), but we give some quick links here:
 
-```
-docker build -t alfaro96/tex:latest .
-```
+* [Installing Docker Engine](https://docs.docker.com/engine/install/)
 
-## Run
+## Building the image
 
-To compile the main file:
+We are using a Makefile to simplify Docker commands within `make` commands.
 
-```
-docker run -it -v $(pwd)/:/home/tex/workspace/ -e FILE=main --rm alfaro96/tex:latest
-```
-
-## Docker Hub
-
-One can easily obtain the image using:
+To build the image from the Dockerfile:
 
 ```
-docker pull alfaro96/tex:latest
+make build
 ```
+
+## Pulling the image
+
+To pull the image from [Docker Hub](https://hub.docker.com):
+
+```
+make pull
+```
+
+## Running the container
+
+To compile the `main` file:
+
+```
+make run FILE=main
+```
+
+

@@ -1,8 +1,7 @@
 FROM debian:buster-slim
 
-# Install the full version of TeX to compile LaTeX
-# projects ChkTeX for LaTeX semantic checker and
-# Git for version control
+# Install TeX to compile LaTeX projects, ChkTeX as a
+# LaTeX semantic checker and Git for version control
 RUN apt-get update
 RUN apt-get install -y texlive-full chktex git
 
