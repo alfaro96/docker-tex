@@ -1,13 +1,10 @@
 FROM debian:buster-slim
 
-# Install the full version of TeX to compile LaTeX
-# projects ChkTeX for LaTeX semantic checker and
-# Git for version control
 RUN apt-get update
 RUN apt-get install -y texlive-full chktex git
 
-# Create a new user to avoid that the
-# container is run in privileged mode
+# Running the container in root mode is
+# not recommended for security purposes
 ARG USERNAME=tex
 ENV HOME /home/$USERNAME
 RUN useradd -ms /bin/bash $USERNAME
