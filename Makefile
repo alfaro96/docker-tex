@@ -1,7 +1,5 @@
 # Makefile to simplify repetitive tasks
 
-all: build run
-
 build:
 	docker build -t alfaro96/tex .
 

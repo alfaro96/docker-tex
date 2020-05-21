@@ -5,7 +5,7 @@
 
 # Using LaTeX via Docker
 
-This directory contains a Dockerfile to make it easy to get up and compile LaTeX files via [Docker](https://docker.com).
+This directory contains a `Dockerfile` to make it easy to get up and compile LaTeX files via [Docker](https://docker.com).
 
 ## Installing Docker
 
@@ -15,9 +15,9 @@ General installation instructions are [on the Docker site](https://docs.docker.c
 
 ## Building the image
 
-We are using a Makefile to simplify Docker commands within `make` commands.
+We are using a `Makefile` to simplify Docker commands within `make` commands.
 
-To build the image from the Dockerfile:
+To build the image from the `Dockerfile`:
 
 ```
 make build
@@ -33,7 +33,7 @@ make pull
 
 ## Running the container
 
-To run the container and compile the main file:
+To compile the main file:
 
 ```
 make run FILE=main
